@@ -26,3 +26,30 @@ plantas <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesd
 
 ```
 
+## Filtrando los datos para resolver el ejemplo 01
+
+El código que se va a ejecutar ahora es para resolver el problema 
+propuesto en el ejercicio 01, para poner en la base de datos solo 
+los datos de Chile y las columnas de país (*country*), la especie (*binomial_name*) 
+y la categoría dentro de la lista roja de la ***IUCN*** (*red_list_category*)
+
+```{r}
+Chile<- plantas %>% 
+  dplyr::filter(country=="Chile") %>% 
+  dplyr::select("binomial_name", "country", "red_list_category")
+Chile
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

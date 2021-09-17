@@ -42,3 +42,24 @@ plantas <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesd
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+## Filtrando los datos para resolver el ejemplo 01
+
+El código que se va a ejecutar ahora es para resolver el problema
+propuesto en el ejercicio 01, para poner en la base de datos solo los
+datos de Chile y las columnas de país (*country*), la especie
+(*binomial\_name*) y la categoría dentro de la lista roja de la
+***IUCN*** (*red\_list\_category*)
+
+``` r
+Chile<- plantas %>% 
+  dplyr::filter(country=="Chile") %>% 
+  dplyr::select("binomial_name", "country", "red_list_category")
+Chile
+```
+
+    ## # A tibble: 2 × 3
+    ##   binomial_name           country red_list_category  
+    ##   <chr>                   <chr>   <chr>              
+    ## 1 Santalum fernandezianum Chile   Extinct            
+    ## 2 Sophora toromiro        Chile   Extinct in the Wild
